@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load tailwind_filters %}
+{% load static %}
+{% block content %}
+{% include '_navbar.html' %}
+<style>
+  .fill-current,
+  .asteriskField {
+    display: none;
+  }
+
+  /* CSS */
+  .button-41 {
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #00D775, #00BD68);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    height: 44px;
+    line-height: 44px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    z-index: 9;
+    border: 0;
+  }
+
+  .button-41:hover {
+    background: #00bd68;
+  }
+
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: url('/static/img/contato/thumbnail_Sem título.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .banner h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 3.5rem;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0;
+  }
+</style>
+
+<div class="banner">
+  <h1>Contato</h1>
+</div>
+
+
+<section style="background-color: #cce7d8;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 p-4 mt-4 pt-4">
+        <h1 class="display-5 font-weight-bold p-4 mt-4 pt-4 text-center"
+          style="font-family: Georgia, 'Times New Roman', Times, serif;">Fale conosco <br>
+          sobre o seu projeto....
+        </h1>
+        <aside class="mt-4 d-flex justify-content-center">
+          <div class="row text-center">
+            <div class="col-md-12 mb-2">
+              <a href="https://www.instagram.com/preserva.sma/" class="href">
+                <img class="ml-1" src="/static/img/contato/instagram.png" height="50" alt="imagem_instagem">
+              </a>
+            </div>
+            <div class="col-md-12 mb-2">
+              <a href="mailto:preserva.sma@gmail.com" class="href">
+                <img class="ml-1" src="/static/img/contato/email.png" height="50" alt="imagem_email">
+              </a>
+            </div>
+            <div class="col-md-12 mb-2">
+              <a href="https://wa.me/message/UNJCDY73F7PQD1" class="href">
+                <img class="ml-1" src="/static/img/contato/whatsapp.png" height="50" alt="imagem_whatsapp">
+              </a>
+            </div>
+            <div class="col-md-12 mb-2">
+              <a href="https://www.facebook.com/preserva.sma/" class="href">
+                <img src="/static/img/contato/pngwing.com.png" height="60" alt="imagem_facebook">
+              </a>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <div class="col-md-7 m-8" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+        <div class="form-container pt-4 pb-4 mt-4 mb-4">
+          <div class="container text-center "> {% for message in messages %} <div class="alert alert-warning">
+            {% if message.tags %} {% endif %} {{ message }} </div> {% endfor %} </div>
+          <h1 class="text-center mt-4 mb-4">Nos envie uma mensagem...
+            <img src="{% static 'img/contato/rocket.png' %}" height="30" alt="">
+            </h5>
+            <form method="POST" class="text-center">
+              {% csrf_token %}
+              {{ form|crispy }}
+              <button type="submit" class="button-41 font-weight-bold " role="button">ENVIAR</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include '_footer.html' %}
+{% endblock %}

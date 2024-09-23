@@ -1,0 +1,183 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include '_navbar.html' %}
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: url('/static/img/contato/thumbnail_Sem título.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .banner h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 3.5rem;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0;
+  }
+
+  .banner p {
+    font-size: 1.25rem;
+    margin: 20px 0 0;
+    /* Increased margin from the heading */
+    max-width: 80%;
+    /* Reduced max-width for better centering */
+    line-height: 1.6;
+    /* Improved line-height for readability */
+    display: inline-block;
+    /* Ensures the paragraph does not stretch the full width */
+  }
+
+  @media (max-width: 768px) {
+    .banner h1 {
+      font-size: 2rem;
+      padding: 15px;
+    }
+
+    .banner p {
+      font-size: 1rem;
+      max-width: 90%;
+      /* Adjusted for medium screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .banner h1 {
+      font-size: 1.5rem;
+      padding: 10px;
+    }
+
+    .banner p {
+      font-size: 0.875rem;
+      max-width: 100%;
+      /* Full width on smaller screens */
+    }
+  }
+
+  /* img */
+  .img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+</style>
+
+<body>
+  <!-- servicos água -->
+  <section style="margin-bottom: 20px;">
+    <div class="banner mt-4">
+      <h1 style="margin-bottom: -10px;">ÁGUAS</h1>
+      <p class="text-center">
+        Projetos de engenharia para melhoria da qualidade e quantidade de águas, soluções para otimização de processos e
+        avaliação de performance em Estações de Tratamento de Águas.
+        Atendemos zonas rurais e urbanas.
+      </p>
+    </div>
+    <div class="container d-flex justify-content-center" style="font-family: Arial, Helvetica, sans-serif;">
+      <div class="row">
+        <div class="col-lg-12 text-center pt-5 pb-5 text-dark card mt-4">
+          <div class="active text-center p-4">
+            <img class="img" src="{% static 'img/servicos/agua/img_agua1.png' %}" alt="img_servico_agua">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0" style="font-size: 20px;">
+                <br><i class="fa fa-quote-left"></i>
+                <span class="font-weight-bold" style="color: #0c8140;">Captação e Adução de Águas</span>
+              </p>
+              <span style="font-size: 15px;"> Em locais onde não
+                há distribuição de água pelas companhias, é
+                necessário realizar a captação
+                direto da
+                natureza, seja rio, nascente, córrego ou águas subterrâneas.
+                <br>
+                Após a captação a água bruta é transportada para um reservatório, onde é avaliada sua qualidade por
+                meio
+                de análises físico-químicas e microbiológicas.
+              </span>
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- servico 2 -->
+        <div class="col-lg-12 text-center pt-5 pb-5 text-dark card mt-4">
+          <div class="active text-center p-4">
+            <img class="img" src="{% static 'img/servicos/agua/img_agua2.png' %}" alt="img_servico_agua">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0" style="font-size: 20px;">
+                <br><i class="fa fa-quote-left"></i>
+                <span class="font-weight-bold" style="color: #0c8140;">Tecnologias para Tratamento de Águas</span>
+              </p>
+              <span style="font-size: 15px;"> Com a avaliação da qualidade da água é possível indicar o tratamento
+                específico para cada caso. A água bruta precisa ser tratada em uma ETA – Estação de Tratamento de
+                Água, se tornando uma água potável, podendo então ser distribuída por uma rede de tubulações para as
+                habitações comtempladas pelo projeto de abastecimento.
+                <br>
+                Existem também as águas industriais, que demandam características específicas e podem ser
+                reaproveitadas dentro de uma cadeia produtiva
+              </span>
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- servico 3 -->
+        <div class="col-lg-12 text-center pt-5 pb-5 text-dark card mt-4">
+          <div class="active text-center p-4">
+            <img class="img" src="{% static 'img/servicos/agua/img_agua3.png' %}" alt="img_servico_agua">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0" style="font-size: 20px;">
+                <br><i class="fa fa-quote-left"></i>
+                <span class="font-weight-bold" style="color: #0c8140;">Soluções para Preservação de Nascentes</span>
+              </p>
+              <span style="font-size: 15px;"> ​Ter uma fonte de água na propriedade é um presente!
+                Realizamos a localização e preservação de nascentes, criando uma área facilitadora de afloramento, que
+                mantém a qualidade da água e melhora a quantidade disponível. Com a medição da vazão média podemos
+                indicar o melhor uso nas dependências do local.
+              </span>
+            </blockquote>
+          </div>
+        </div>
+
+
+
+        <!-- servico 4 -->
+        <div class="col-lg-12 text-center pt-5 pb-5 text-dark card mt-4">
+          <div class="active text-center p-4">
+            <img class="img" src="{% static 'img/servicos/agua/img_agua5.png' %}" alt="img_servico_agua">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0" style="font-size: 20px;">
+                <br><i class="fa fa-quote-left"></i>
+                <span class="font-weight-bold" style="color: #0c8140;">Monitoramento de Estações de Tratamento e
+                  Análises de Qualidade </span>
+              </p>
+              <span style="font-size: 15px;">O monitoramento frequente e as análises físico-químicas e microbiológicas
+                são uma importante ferramenta de controle de qualidade e avaliação da performance do tratamento, se
+                aplicam a águas e esgotos e nos respondem uma série de perguntas.
+                <br>
+                Se for identificado algo fora do padrão é possível determinar a causa e realizar a adequada correção.
+              </span>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include '_footer.html' %}
+  {% endblock %}

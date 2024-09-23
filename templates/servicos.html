@@ -1,0 +1,494 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include '_navbar.html' %}
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: url('/static/img/contato/thumbnail_Sem título.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .banner h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 3.5rem;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0;
+  }
+
+  .banner p {
+    font-size: 1.25rem;
+    margin: 20px 0 0;
+    /* Increased margin from the heading */
+    max-width: 80%;
+    /* Reduced max-width for better centering */
+    line-height: 1.6;
+    /* Improved line-height for readability */
+    display: inline-block;
+    /* Ensures the paragraph does not stretch the full width */
+  }
+
+  @media (max-width: 768px) {
+    .banner h1 {
+      font-size: 2rem;
+      padding: 15px;
+    }
+
+    .banner p {
+      font-size: 1rem;
+      max-width: 90%;
+      /* Adjusted for medium screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .banner h1 {
+      font-size: 1.5rem;
+      padding: 10px;
+    }
+
+    .banner p {
+      font-size: 0.875rem;
+      max-width: 100%;
+      /* Full width on smaller screens */
+    }
+  }
+
+  /* img */
+  .img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+</style>
+
+
+<body>
+  <!-- servicos água -->
+  <section>
+    <div class="banner mt-4">
+      <h1 style="margin-bottom: -10px;">ÁGUAS</h1>
+      <p class="text-center">
+        Projetos de engenharia para melhoria da qualidade e quantidade de águas, soluções para otimização de processos e
+        avaliação de performance em Estações de Tratamento de Águas.
+        Atendemos zonas rurais e urbanas.
+      </p>
+    </div>
+    <div class="container d-flex justify-content-center" style="font-family: Arial, Helvetica, sans-serif;">
+      <div class="col-lg-6 text-center pt-5 pb-5 text-dark card mt-4">
+        <div id="client-testimonial-carousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active text-center p-4">
+              <img class="img" src="{% static 'img/servicos/agua/img_agua1.png' %}" alt="img_servico_agua">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Captação e Adução de Águas</span>
+                </p>
+                <span style="font-size: 15px;"> Em locais onde não
+                  há distribuição de água pelas companhias, é
+                  necessário realizar a captação
+                  direto da
+                  natureza, seja rio, nascente, córrego ou águas subterrâneas.
+                  <br>
+                  Após a captação a água bruta é transportada para um reservatório, onde é avaliada sua qualidade por
+                  meio
+                  de análises físico-químicas e microbiológicas.
+                </span>
+              </blockquote>
+            </div>
+            <!-- servico 2 -->
+            <div class="carousel-item  text-center p-4">
+              <img class="img" src="{% static 'img/servicos/agua/img_agua2.png' %}" alt="img_servico_agua">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Tecnologias para Tratamento de Águas</span>
+                </p>
+                <span style="font-size: 15px;"> Com a avaliação da qualidade da água é possível indicar o tratamento
+                  específico para cada caso. A água bruta precisa ser tratada em uma ETA – Estação de Tratamento de
+                  Água, se tornando uma água potável, podendo então ser distribuída por uma rede de tubulações para as
+                  habitações comtempladas pelo projeto de abastecimento.
+                  <br>
+                  Existem também as águas industriais, que demandam características específicas e podem ser
+                  reaproveitadas dentro de uma cadeia produtiva
+                </span>
+              </blockquote>
+            </div>
+
+            <!-- servico 3 -->
+            <div class="carousel-item  text-center p-4">
+              <img class="img" src="{% static 'img/servicos/agua/img_agua3.png' %}" alt="img_servico_agua">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Soluções para Preservação de Nascentes</span>
+                </p>
+                <span style="font-size: 15px;"> ​Ter uma fonte de água na propriedade é um presente!
+                  Realizamos a localização e preservação de nascentes, criando uma área facilitadora de afloramento, que
+                  mantém a qualidade da água e melhora a quantidade disponível. Com a medição da vazão média podemos
+                  indicar o melhor uso nas dependências do local.
+                </span>
+              </blockquote>
+            </div>
+
+            <!-- servico 4 -->
+            <div class="carousel-item  text-center p-4">
+              <img class="img" src="{% static 'img/servicos/agua/img_agua4.png' %}" alt="img_servico_agua">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Soluções para Preservação de Nascentes</span>
+                </p>
+                <span style="font-size: 15px;"> Visando a economia da edificação, a coleta e armazenamento de água da
+                  chuva é uma opção para suprir fins não potáveis.
+                </span>
+              </blockquote>
+            </div>
+
+
+            <!-- servico 5 -->
+            <div class="carousel-item  text-center p-4">
+              <img class="img" src="{% static 'img/servicos/agua/img_agua5.png' %}" alt="img_servico_agua">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Monitoramento de Estações de Tratamento e
+                    Análises de Qualidade </span>
+                </p>
+                <span style="font-size: 15px;">O monitoramento frequente e as análises físico-químicas e microbiológicas
+                  são uma importante ferramenta de controle de qualidade e avaliação da performance do tratamento, se
+                  aplicam a águas e esgotos e nos respondem uma série de perguntas.
+                  <br>
+                  Se for identificado algo fora do padrão é possível determinar a causa e realizar a adequada correção.
+                </span>
+              </blockquote>
+            </div>
+          </div>
+          <br>
+          <ol class="carousel-indicators">
+            <li data-target="#client-testimonial-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#client-testimonial-carousel" data-slide-to="1"></li>
+            <li data-target="#client-testimonial-carousel" data-slide-to="2"></li>
+            <li data-target="#client-testimonial-carousel" data-slide-to="3"></li>
+            <li data-target="#client-testimonial-carousel" data-slide-to="4"></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- servicos esgosto -->
+  <section>
+    <div class="banner mt-4">
+      <h1 style="margin-bottom: -10px;">ESGOTOS</h1>
+      <p class="text-center">
+        ​Projetos de engenharia para melhoria  da qualidade sanitária do ambiente, com soluções para tratamento de
+        efluentes diversos, regularização hidrossanitária de imóveis, monitoramento e avaliação de performance em
+        Estações de Tratamento de Esgotos.
+        Atendemos zonas rurais e urbanas.
+      </p>
+    </div>
+    <div class="container d-flex justify-content-center" style="font-family: Arial, Helvetica, sans-serif;">
+      <div class="col-lg-6 text-center pt-5 pb-5 text-dark card mt-4">
+        <div id="esgoto-servico" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active text-center p-4">
+              <img class="img" src="{% static 'img/servicos/esgoto/img_esgotos_1.png' %}" alt="img_servico_esgoto">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Projetos Hidrossanitários</span>
+                </p>
+                <span style="font-size: 15px;">Objetiva mapear o sistema hidráulico de uma construção, projetando e
+                  descrevendo com exatidão pontos de água, rede de esgoto, drenagem e coleta de água e chuva. Reduzindo
+                  custos extras na construção, e facilitando futuros reparos.
+                  <br>
+                  É executado após estabelecido os projetos arquitetônico e estrutural da construção.
+                </span>
+              </blockquote>
+            </div>
+            <!-- servico 2 -->
+            <div class="carousel-item  text-center p-4">
+              <img class="img" src="{% static 'img/servicos/esgoto/img_esgotos_2.png' %}" alt="img_servico_esgoto">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Coleta e tratamento de esgotos</span>
+                </p>
+                <span style="font-size: 15px;">O tratamento adequado dos esgotos garante qualidade ambiental e proteção
+                  da saúde humana.
+                  <br>
+                  A escolha da tecnologia mais adequada está diretamente ligada a eficiência de tratamento que se deseja
+                  obter, do tipo de efluente a ser tratado, da disponibilidade de área e da necessidade paisagística.
+                </span>
+              </blockquote>
+            </div>
+
+            <!-- servico 3 -->
+            <div class="carousel-item  text-center p-4">
+              <img class="img" src="{% static 'img/servicos/esgoto/img_esgotos_3.png' %}" alt="img_servico_esgoto">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Ecotecnologias para tratamento de
+                    esgotos</span>
+                </p>
+                <span style="font-size: 15px;">As Ecotecnologias são conhecidas como Wetlands Construídos, Filtros
+                  Plantados ou Jardins Filtrantes, são uma opção ao tratamento de esgotos que simulam os processos
+                  naturais de depuração que acontecem na natureza!
+                  <br>
+                  Tratam esgotos de diversas fontes poluidoras – comércio, indústrias e residências – Necessitam de
+                  baixa manutenção e operação, são paisagísticos e possuem alta eficiência na remoção de poluentes!
+                </span>
+              </blockquote>
+            </div>
+
+            <!-- servico 4 -->
+            <div class="carousel-item  text-center p-4">
+              <img class="img" src="{% static 'img/servicos/esgoto/img_esgotos_4.png' %}" alt="img_servico_esgoto">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Regularização de Instalações Hidrossanitárias
+                    de Imóveis</span>
+                </p>
+                <span style="font-size: 15px;"> Declaração de Conformidade Sanitária, Habite-se e Alvará Sanitário,
+                  Relatórios, vistorias, obras, laudos, emissão de ART, entre outros procedimentos necessários para
+                  regularizar sua casa ou empreendimento.
+                </span>
+              </blockquote>
+            </div>
+
+
+            <!-- servico 5 -->
+            <div class="carousel-item  text-center p-4">
+              <img class="img" src="{% static 'img/servicos/esgoto/img_esgotos_5.png' %}" alt="img_servico_esgoto">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Monitoramento de Estações de Tratamento e
+                    Análises de Qualidade </span>
+                </p>
+                <span style="font-size: 15px;">O monitoramento frequente e as análises físico-químicas e microbiológicas
+                  são uma importante ferramenta de controle de qualidade e avaliação da performance do tratamento, se
+                  aplicam a águas e esgotos e nos respondem uma série de perguntas.
+                  <br>
+                  Se for identificado algo fora do padrão é possível determinar a causa e realizar a adequada correção.
+                </span>
+              </blockquote>
+            </div>
+          </div>
+          <br>
+          <ol class="carousel-indicators">
+            <li data-target="#esgoto-servico" data-slide-to="0" class="active"></li>
+            <li data-target="#esgoto-servico" data-slide-to="1"></li>
+            <li data-target="#esgoto-servico" data-slide-to="2"></li>
+            <li data-target="#esgoto-servico" data-slide-to="3"></li>
+            <li data-target="#esgoto-servico" data-slide-to="4"></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- servicos residuos -->
+  <section>
+    <div class="banner mt-4">
+      <h1 style="margin-bottom: -10px;">RESÍDUOS SÓLIDOS</h1>
+      <p class="text-center">
+        Soluções para gestão de resíduos e reaproveitamento de compostos.
+      </p>
+    </div>
+    <div class="container d-flex justify-content-center" style="font-family:Arial, Helvetica, sans-serif;">
+      <div class="col-lg-6 text-center pt-5 pb-5 text-dark card mt-4">
+        <div id="residuos-servico" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <div class="carousel-item active text-center p-4">
+              <img class="img" src="{% static 'img/servicos/residuos_solidos/img_residuos_1.png' %}"
+                alt="img_servico_residuos">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Plano de Gerenciamento de Resíduos Sólidos –
+                    PGRS</span>
+                </p>
+                <span style="font-size: 15px;">Documento técnico que visa caracterizar e quantificar a geração de
+                  resíduos sólidos do seu estabelecimento. Além de auxiliar o proprietário a definir procedimentos
+                  ambientalmente adequados de coleta, armazenamento, transporte, tratamento e destinação ou disposição
+                  final.
+                  ​<br>
+                  De acordo com a Política Nacional de Resíduos Sólidos o PGRS é obrigatório para determinados
+                  seguimentos, entre em contato conosco para saber se seu empreendimento esta sujeito!
+                </span>
+              </blockquote>
+            </div>
+            <!-- servico 2 -->
+            <div class="carousel-item  text-center p-4">
+              <img class="img" src="{% static 'img/servicos/residuos_solidos/img_residuos_2.png' %}"
+                alt="img_servico_residuos">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Composteiras Domésticas</span>
+                </p>
+                <span style="font-size: 15px;">Uma tecnologia simples e compacta, que transforma os resíduos orgânicos
+                  em adubo rico em nutrientes para as plantas. Solução ideal para residências, condomínios, pousadas e
+                  restaurantes.
+                </span>
+              </blockquote>
+            </div>
+          </div>
+          <br>
+          <ol class="carousel-indicators">
+            <li data-target="#residuos-servico" data-slide-to="0" class="active"></li>
+            <li data-target="#residuos-servico" data-slide-to="1"></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- servicos assessoria ambiental -->
+  <section style="margin-bottom: 20px;">
+    <div class="banner mt-4">
+      <h1 style="margin-bottom: -10px;">ASSESORIA AMBIENTAL</h1>
+      <p class="text-center">
+        Auxílio técnico a pessoas físicas e jurídicas acerca de procedimentos ambientais e sanitários, atualização de
+        documentos, planejamento e desenvolvimento de projetos e estudos. </p>
+    </div>
+    <div class="container d-flex justify-content-center" style="font-family: Arial, Helvetica, sans-serif;">
+      <div class="col-lg-6 text-center pt-5 pb-5 text-dark card mt-4">
+        <div id="assessoria-servico" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" role="listbox">
+            <!-- servico 2 -->
+            <div class="carousel-item active text-center p-4">
+              <img class="img" src="{% static 'img/servicos/assessoria_ambiental/img_assessoria_1.png' %}"
+                alt="img_servico_residuos">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">​Licenciamento Ambiental
+                    (LAP, LAI, LAO)</span>
+                </p>
+                <span style="font-size: 15px;">Este documento é aplicável a todo empreendimento ou atividade ao qual
+                  possa ocasionar em poluição ou qualquer tipo de degradação ao meio ambiente.
+                  <br>
+                  LAP: Licença Ambiental Prévia
+                  LAI: Licença Ambiental de Instalação
+                  LAO: Licença Ambiental de Operação
+                </span>
+              </blockquote>
+            </div>
+
+            <!-- servico 2 -->
+            <div class="carousel-item  text-center p-4">
+              <img class="img" src="{% static 'img/servicos/assessoria_ambiental/img_assessoria_2.png' %}"
+                alt="img_servico_residuos">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Cadastro Ambiental Rural – CAR</span>
+                </p>
+                <span style="font-size: 15px;">
+                  O CAR é um registro público eletrônico das informações ambientas do imóvel, obrigatório desde 2019
+                  para todas as propriedades e posses rurais. O CAR é exigido em transações comerciais e bancárias, como
+                  o acesso ao crédito rural e ao seguro agrícola.
+                </span>
+              </blockquote>
+            </div>
+
+
+            <!-- servico 3 -->
+            <div class="carousel-item  text-center p-4">
+              <img class="img" src="{% static 'img/servicos/assessoria_ambiental/img_assessoria_3.png' %}"
+                alt="img_servico_residuos">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Plano de Recuperação de Áreas Degradadas –
+                    PRAD</span>
+                </p>
+                <span style="font-size: 15px;">
+                  Documento designado a estabelecer e planejar técnicas para recuperação e restauração ecológica de uma
+                  área degradada, danificada ou destruída por um empreendimento ou uma atividade.
+                </span>
+              </blockquote>
+            </div>
+
+            <!-- servico 4 -->
+            <div class="carousel-item  text-center p-4">
+              <img class="img" src="{% static 'img/servicos/assessoria_ambiental/img_assessoria_4.png' %}"
+                alt="img_servico_residuos">
+              <blockquote class="blockquote text-center">
+                <p class="mb-0" style="font-size: 20px;">
+                  <br><i class="fa fa-quote-left"></i>
+                  <span class="font-weight-bold" style="color: #0c8140;">Estudos de Impacto Ambiental e Relatório de
+                    Impacto Ambiental  EIA/RIMA</span>
+                </p>
+                <span style="font-size: 15px;">
+                  É um conjunto de documentos que necessitam de uma equipe técnica multidisciplinar para seu
+                  desenvolvimento com o objetivo de caracterizar e avaliar os possíveis impactos ambientais de um
+                  empreendimento ou atividade, tal como, sugerir as medidas mitigadoras.
+                </span>
+              </blockquote>
+            </div>
+          </div>
+          <br>
+          <ol class="carousel-indicators ">
+            <li data-target="#assessoria-servico" data-slide-to="0" class="active"></li>
+            <li data-target="#assessoria-servico" data-slide-to="1"></li>
+            <li data-target="#assessoria-servico" data-slide-to="2"></li>
+            <li data-target="#assessoria-servico" data-slide-to="3"></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <style>
+    /* Change the background color of carousel indicators */
+    .carousel-indicators li {
+      background-color: #d3d3d3;
+      /* Inactive indicator color */
+    }
+
+    .carousel-indicators .active {
+      background-color: #ff6347;
+      /* Active indicator color */
+    }
+
+    /* Optional: Increase the size of indicators */
+    .carousel-indicators li {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+  </style>
+
+
+  {% include '_footer.html' %}
+  {% endblock %}

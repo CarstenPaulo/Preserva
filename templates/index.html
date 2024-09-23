@@ -1,0 +1,877 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include '_navbar.html' %}
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<style>
+  body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .rotating-text-wrapper h2 {
+    margin: 0;
+    color: #fff;
+  }
+
+
+  /* Header LeiaMais */
+  .cardTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+    height: 50px;
+  }
+
+  .cardDescription {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+
+  .btnLeia {
+    align-items: center;
+    background-color: #0d78c2;
+    border: 0;
+    border-radius: 100px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 20px;
+    max-width: 480px;
+    min-height: 40px;
+    min-width: 0px;
+    overflow: hidden;
+    padding: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    touch-action: manipulation;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+  }
+
+  /* 
+  #sobre {
+    background-color: #0c8140;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  } */
+
+
+  /* CSS */
+  /* .button-28 {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #1A1A1A;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    will-change: transform;
+    color: #fff;
+    background-color: #1A1A1A;
+  } */
+
+
+  /*  
+  .button-86 {
+    all: unset;
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    background: transparent;
+    border: none;
+    position: relative;
+    color: #f0f0f0;
+    cursor: pointer;
+    z-index: 1;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .button-86::after,
+  .button-86::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all .4s;
+  }
+
+  .button-86::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #28282d;
+    border-radius: 10px;
+  }
+
+  .button-86::after {
+    transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #ffffff15;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+  }
+
+  .button-86:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+  }
+
+  .button-86:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+  }
+
+  .button-86:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+  }
+    */
+
+  /*
+  .button-27 {
+    align-items: center;
+    appearance: none;
+    background-color: #000;
+    border: 2px solid #1a1a1a;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 45px;
+    outline: 0;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    will-change: transform
+  }
+
+  .button-27:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px)
+  }
+
+  .button-27:active {
+    box-shadow: none;
+    transform: translateY(0)
+  }
+
+  */
+
+  /* image RESIZE */
+  .gallery {
+    --g: 6px;
+    /* the gap */
+    display: grid;
+    width: 440px;
+    /* the size */
+    aspect-ratio: 1;
+    grid: auto-flow 1fr/repeat(3, 1fr);
+    gap: var(--g);
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: .5s
+  }
+
+  .gallery img:nth-child(2) {
+    grid-area: 1/2/span 2/span 2;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, calc(50% + var(--g)/4) 100%, 0 calc(50% - var(--g)/4))
+  }
+
+  .gallery img:nth-child(3) {
+    grid-area: 2/1/span 2/span 2;
+    clip-path: polygon(0 0, calc(50% - var(--g)/4) 0, 100% calc(50% + var(--g)/4), 100% 100%, 0 100%);
+  }
+
+
+  /* Container for video background and text */
+  .banner {
+    position: relative;
+    overflow: hidden;
+    /* Ensure content doesn’t overflow the container */
+  }
+
+  .banner video {
+    width: 100%;
+    height: 560px;
+    /* Set the height to 550px */
+    object-fit: cover;
+    /* Ensure the video covers the container */
+  }
+
+  /* Container for action text */
+  .action-text {
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjust positioning to truly center the element */
+    text-align: center;
+    width: 80%;
+    /* Adjust width to fit within the container */
+    max-width: 800px;
+    /* Set a maximum width to prevent stretching too wide */
+    padding: 0 20px;
+    /* Add some padding for better readability */
+    box-sizing: border-box;
+    /* Ensure padding is included in width */
+    z-index: 1;
+    /* Ensure text is above the video */
+  }
+
+  /* Animated text styling */
+  .animate-action p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 900;
+    color: white;
+    white-space: normal;
+    line-height: 1.2;
+    margin: 0;
+    opacity: 1;
+    transition: opacity 1s ease, transform 1s ease;
+    /* Smooth transition for opacity and transform */
+  }
+
+  /* Keyframes for text animation */
+  @keyframes fadeInOut {
+
+    0%,
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    50% {
+      opacity: 0.5;
+      transform: translateY(-20px);
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .banner video {
+      height: 400px;
+      /* Adjust height for smaller screens if needed */
+    }
+
+    .animate-action p {
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      /* Smaller font size for smaller screens */
+    }
+  }
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #000000;
+    height: 100px;
+    width: 30px;
+  }
+
+
+  .section-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  /* Card styling */
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 100%;
+    /* Ensure cards are of equal height */
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    height: 100%;
+  }
+
+  .card img {
+    width: auto;
+    height: 70px;
+    margin-bottom: 15px;
+  }
+
+  .cardTitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .cardDescription {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
+  .btnLeia {
+    align-items: center;
+    background-color: #0d78c2;
+    border: 0;
+    border-radius: 100px;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    padding: 10px 20px;
+    text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  }
+
+  .btnLeia:hover {
+    background-color: #0056b3;
+  }
+
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    .card {
+      flex: 1 1 45%;
+      /* Adjust card size for tablets */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      flex: 1 1 100%;
+      /* Adjust card size for mobile phones */
+    }
+  }
+</style>
+
+<body>
+  <!-- banner -->
+  <section class="container-fluid p-0 banner">
+    <video autoplay loop muted>
+      <source src="{% static 'img/videoBanner.mp4' %}" type="video/mp4">
+    </video>
+    <div class="action-text">
+      <div class="animate-action">
+        <p></p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- servicos -->
+  <section id="servicos" style="background-color: #f0f0f0;">
+    <div class="container pt-4 pb-4">
+      <p class="text-dark font-weight-bold text-center pt-4 pb-4" style="font-family:Arial, Helvetica, sans-serif">
+        Serviços</p>
+
+      <div class="container overflow-hidden">
+        <div class="row gy-4 gy-xl-0">
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card">
+              <div class="card-body text-center p-4 p-xxl-5">
+                <img class="img-responsive" src="{% static 'img/servicos/servico1.png' %}" height="70" alt="">
+                <h4 class="mb-4 cardTitle pt-4" style="font-size: 18px;">Águas</h4>
+                <p class="mb-4 text-secondary cardDescription p-2" style="font-size: 15px;">Captação e adução de águas,
+                  tratamento avançado, preservação de nascentes, armazenamento de água da chuva e análises de qualidade
+                  e potabilidade.</p>
+                <br>
+                <br>
+                <a href="{% url 'aguas' %}" class="href"><button class="btnLeia">Leia Mais</button></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card">
+              <div class="card-body text-center p-4">
+                <img class="img-responsive" src="{% static 'img/servicos/servico2.png' %}" height="70" alt="">
+                <h4 class="mb-4 cardTitle pt-4" style="font-size: 18px;">Esgotos</h4>
+                <p class="mb-4 text-secondary cardDescription p-2" style="font-size: 15px;">Projetos hidrossanitários,
+                  coleta e tratamento
+                  de esgotos, ecotecnologias para esgotos, obras de regularização de instalações e suporte para
+                  habite-se e alvará sanitário.
+                  <br>
+                  <br>
+                </p>
+                <a href="{% url 'aguas' %}" class="href"><button class="btnLeia">Leia Mais</button></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card">
+              <div class="card-body text-center p-4">
+                <img class="img-responsive" src="{% static 'img/servicos/servico4.png' %}" height="70" alt="">
+                <h4 class="mb-4 cardTitle pt-4" style="font-size: 18px;">Assessoria Ambiental</h4>
+                <p class="mb-4 text-secondary cardDescription p-2" style="font-size: 15px;">Licenciamento ambiental
+                  (LAP,
+                  LAI, LAO),
+                  cadastro ambiental rural (CAR), plano de recuperação de áreas degradadas (PRAD), estudos de impacto
+                  ambiental (EIA) e relatório de impacto ambiental (RIMA).</p>
+                <a href="{% url 'aguas' %}" class="href"><button class="btnLeia">Leia Mais</button></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card">
+              <div class="card-body text-center p-4">
+                <img class="img-responsive" src="{% static 'img/servicos/servico3.png' %}" height="70" alt="">
+                <h4 class="mb-4 cardTitle pt-4" style="font-size: 18px;">Resíduos Sólidos</h4>
+                <p class="mb-4 text-secondary cardDescription p-2" style="font-size: 15px;">
+                  Desenvolvemos Planos de Gerenciamento de Resíduos Sólidos (PGRS) personalizados para sua necessidade e
+                  fornecemos composteiras domésticas para uma gestão sustentável dos resíduos.
+                  <br><br>
+                </p>
+                <a href="{% url 'aguas' %}" class="href"><button class="btnLeia">Leia Mais</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- sobre -->
+  <!-- <section id="sobre" data-aos="fade-right" data-aos-duration="1000">
+    <div class="container pt-4 pb-4 mb-4">
+      <p class="text-white font-weight-bold text-center pt-4 pb-4"
+        style="font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Geneva,Verdana,sans-serif">
+        Sobre Nós</p>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-6 pt-4 pb-4">
+          <div class="text-wrapper">
+            <p class="display-5">
+              <em class="text-right" style="font-size:40px">Conheça a</em>
+              <strong style="font-size:50px;color:#fff">PRESERVA</strong>
+              <br>
+              <em class="font-italic" style="font-size:25px">Soluções em Saneamaneto e Meio Ambiente.</em>
+            </p>
+            <p class="mb-4 text-white"
+              style="font-family:'Lucida Sans','Lucida Sans Regular','Lucida Grande','Lucida Sans Unicode',Geneva,Verdana,sans-serif">
+              É uma empresa
+              fundada em 2020, dedicada a oferecer soluções inovadoras e sustentáveis no setor de saneamento e meio
+              ambiente. Com atuação destacada no litoral e na serra Catarinense, a PRESERVA tem se consolidado como
+              uma
+              referência na região, atendendo tanto empresas públicas quanto privadas.
+              A essência da PRESERVA está em seu compromisso com um atendimento personalizado, que leva em
+              consideração
+              as necessidades e peculiaridades de cada cliente. A empresa se distingue pela sua visão estratégica,
+              focada em desenvolver soluções que não apenas resolvam problemas imediatos, mas que também promovam a
+              sustentabilidade a longo prazo.
+            </p>
+            <a href="{% url 'sobre' %}" class="href">
+              <button class="button-27 text-center" role="button">Sobre</button>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex justify-content-center">
+          <div class="gallery">
+            <img src="/static/img/conquistas/img-conquista7.jpeg">
+            <img src="/static/img/conquistas/img-conquista3.jpeg">
+            <img src="/static/img/conquistas/img-conquista1.jpeg">
+            <img src="/static/img/conquistas/img-conquista6.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- instagram -->
+  <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+  <div class="elfsight-app-4a1398af-7e4b-4a69-81fe-993bdb1c0dc4" data-elfsight-app-lazy></div>
+
+
+  <!-- clientes -->
+
+  <section id="clientes" data-aos="fade-left" data-aos-duration="1000"
+    style="color: #000; background-color: #f3f2f2;padding-top: 50px;padding-bottom: 50px;">
+    <div class="container pt-4">
+      <h2 class="text-dark font-weight-bold text-center pt-4" style="font-family:Arial, Helvetica, sans-serif">
+        Conheça alguns de nossos clientes</h2>
+      <p class="text-center" style="font-family:Arial, Helvetica, sans-serif;">
+        É por pessoas como você que sempre nos dedicamos em aperfeiçoar o nosso trabalho.
+      </p>
+    </div>
+
+    <div id="thumbSlider" class="carousel slide" data-interval="false">
+      <div class="carousel-inner text-center">
+
+        <div class="carousel-item active justify-content-center">
+          <div class="row">
+            <div data-target="#myCarousel" data-slide-to="0" class="thumb col-sm-4 active p-2">
+              <img src="{% static 'img/clientes/c_13_lazzaris_imoveis.jpeg' %}" height="100" alt="" />
+            </div>
+            <div data-target="#myCarousel" data-slide-to="1" class="thumb col-sm-4 p-2">
+              <img src="{% static 'img/clientes/c_13_zeca_marques.jpeg' %}" height="100" alt="" />
+            </div>
+            <div data-target="#myCarousel" data-slide-to="2" class="thumb col-sm-4 p-2">
+              <img src="{% static 'img/clientes/c1.jpeg' %}" height="100" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div data-target="#myCarousel" data-slide-to="3" class="thumb col-sm-4 p-2">
+              <img src="{% static 'img/clientes/c2_morro_campestre.jpeg.jpeg' %}" height="100" alt="" />
+            </div>
+            <div data-target="#myCarousel" data-slide-to="4" class="thumb col-sm-4 p-2">
+              <img src="{% static 'img/clientes/c3_gesad.png' %}" height="100" alt="" />
+            </div>
+            <div data-target="#myCarousel" data-slide-to="5" class="thumb col-sm-4" p-2>
+              <img src="{% static 'img/clientes/c4_laura_resende.jpg' %}" height="100" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div data-target="#myCarousel" data-slide-to="3" class="thumb col-sm-4 p-2">
+              <img src="{% static 'img/clientes/c5_sec.jpeg' %}" height="100" alt="" />
+            </div>
+            <div data-target="#myCarousel" data-slide-to="4" class="thumb col-sm-4 p-2">
+              <img src="{% static 'img/clientes/c6_refugio_invernador.jpeg' %}" height="100" alt="" />
+            </div>
+            <div data-target="#myCarousel" data-slide-to="5" class="thumb col-sm-4 p-2">
+              <img src="{% static 'img/clientes/c7_vale_tancon.jpg' %}" height="100" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div data-target="#myCarousel" data-slide-to="3" class="thumb col-sm-4 p-2">
+              <img src="{% static 'img/clientes/c8_kayser_haus.jpeg' %}" height="100" alt="" />
+            </div>
+            <div data-target="#myCarousel" data-slide-to="4" class="thumb col-sm-4 p-2">
+              <img src="{% static 'img/clientes/c9_vale_sagrado.jpeg' %}" height="100" alt="" />
+            </div>
+            <div data-target="#myCarousel" data-slide-to="5" class="thumb col-sm-4 p-2">
+              <img src="{% static 'img/clientes/c10_mini_houses.jpeg' %}" height="100" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div data-target="#myCarousel" data-slide-to="3" class="thumb col-sm-4 p-2">
+              <img src="{% static 'img/clientes/c11_altos_corvo.jpeg' %}" height="100" alt="" />
+            </div>
+            <div data-target="#myCarousel" data-slide-to="4" class="thumb col-sm-4 p-2">
+              <img src="{% static 'img/clientes/c9_vale_sagrado.jpeg' %}" height="100" alt="" />
+            </div>
+            <div data-target="#myCarousel" data-slide-to="5" class="thumb col-sm-4 p-2">
+              <img src="{% static 'img/clientes/c10_mini_houses.jpeg' %}" height="100" alt="" />
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev " href="#thumbSlider" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#thumbSlider" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- avaliações -->
+  <section style="color: #000;background-color:  #0c8140;">
+    <div class="container py-5 pt-4" style="padding-top: 100px;padding-bottom: 100px;">
+      <div class="row">
+        <div class="container">
+          <h2 class="text-white font-weight-bold text-center" style="font-family:Arial, Helvetica, sans-serif"
+            style="padding-top: 100px;">
+            Confira o que as pessoas estão dizendo sobre nós!</h2>
+        </div>
+        <p class="mb-4 pb-2 mb-md-5 pb-md-0" style="font-family:Arial, Helvetica, sans-serif">
+        </p>
+      </div>
+    </div>
+    <!-- avaliacao 1 -->
+    <div class="row text-center ">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card">
+          <div class="card-body py-4 mt-2">
+            <h4 class="font-weight-bold" style="font-family:Arial, Helvetica, sans-serif">
+              Paulo</h4>
+            <div class="d-flex justify-content-center mb-4">
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+            </div>
+            <h6 style="font-family:Arial, Helvetica, sans-serif">
+              "Uma empresa séria, preocupada com o meio ambiente e com a necessidade de seus clientes. Possuem
+              especialistas profissionais e qualificados que projetaram..."<br>
+              <a href="https://maps.app.goo.gl/yDVVouVQ7gctTjXY7" class="href"> Leia Mais</a>
+            </h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- avaliacao 2 -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card">
+          <div class="card-body py-4 mt-2">
+            <h4 class="font-weight-bold" style="font-family: Arial, Helvetica, sans-serif">
+              Antonio</h4>
+            <div class="d-flex justify-content-center mb-4">
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+            </div>
+            <h6 style="font-family: Arial, Helvetica, sans-serif">
+              "O profissionalismo e a qualidade dos serviços prestados pela PRESERVA foram fundamentais para que a
+              Pousada Valle do Avencal obtivesse o Selo Verde do Ministério do Turismo/ Sebrae."
+            </h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- avaliacao 3 -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card">
+          <div class="card-body py-4 mt-2">
+            <h4 class="font-weight-bold" style="font-family: Arial, Helvetica, sans-serif">
+              Karen</h4>
+            <div class="d-flex justify-content-center mb-4">
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+            </div>
+            <h6 style="font-family: Arial, Helvetica, sans-serif">
+              "Preservar, significa fazer o melhor possível com orientação profissional. Com a certeza de que não
+              podemos consumir a vida, apenas viver de forma respeitosa com o menor impacto ambiental natureza."
+            </h6>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- avaliacao 4 -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card">
+          <div class="card-body py-4 mt-2">
+            <h4 class="font-weight-bold" style="font-family: Arial, Helvetica, sans-serif">
+              Leonardo</h4>
+            <div class="d-flex justify-content-center mb-4">
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+            </div>
+            <h6 style="font-family: Arial, Helvetica, sans-serif">
+              "Bom atendimento, muito solícitos e profissionais. Senti segurança no serviço. Recomendo."
+            </h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- avaliacao 5 -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card">
+          <div class="card-body py-4 mt-2">
+            <h4 class="font-weight-bold" style="font-family: Arial, Helvetica, sans-serif">
+              Elizete</h4>
+            <div class="d-flex justify-content-center mb-4">
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+            </div>
+            <h6 style="font-family: Arial, Helvetica, sans-serif">
+              "Excelentes profissionais! Muito corretas e atenciosas com seus clientes, recomendo!"
+            </h6>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- avaliacao 6 -->
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="card">
+          <div class="card-body py-4 mt-2">
+            <h4 class="font-weight-bold" style="font-family: Arial, Helvetica, sans-serif">
+              Raphaella</h4>
+            <div class="d-flex justify-content-center mb-4">
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+              <i class="fa-light fa-star fa-flip text-warning"></i>
+            </div>
+            <h6 style="font-family:Arial, Helvetica, sans-serif">
+              "Quando buscamos a Preserva, ainda não sabíamos realmente o que precisávamos....
+              <br>
+              <a href="https://maps.app.goo.gl/8cXCd2ULM3CCnpAN8" class="href"> Leia Mais</a>
+            </h6>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+    <div class="container d-flex justify-content-center mt-4 p-4">
+      <a href="https://www.google.com/maps/place/Preserva+-+Solu%C3%A7%C3%B5es+em+Saneamento+e+Meio+Ambiente/@-27.649418,-49.8040287,9z/data=!4m16!1m9!3m8!1s0x7ecc1b414dc053d:0x523d23abe097a6db!2sPreserva+-+Solu%C3%A7%C3%B5es+em+Saneamento+e+Meio+Ambiente!8m2!3d-27.6509842!4d-49.143286!9m1!1b1!16s%2Fg%2F11v48v7133!3m5!1s0x7ecc1b414dc053d:0x523d23abe097a6db!8m2!3d-27.6509842!4d-49.143286!16s%2Fg%2F11v48v7133?entry=ttu&g_ep=EgoyMDI0MDkxMC4wIKXMDSoASAFQAw%3D%3D"
+        class="href">
+        <button class="button-86" role="button">Ver todas as avaliações</button>
+      </a>
+    </div>
+
+    <style>
+      /* CSS */
+      .button-86 {
+        all: unset;
+        width: 200px;
+        height: 30px;
+        font-size: 16px;
+        background: transparent;
+        background-color: #000;
+        border: none;
+        position: relative;
+        color: #f0f0f0;
+        cursor: pointer;
+        z-index: 1;
+        padding: 10px 20px;
+        display: flex;
+        font-family: Arial, Helvetica, sans-serif;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .button-86::after,
+      .button-86::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -99999;
+        transition: all .4s;
+      }
+
+      .button-86::before {
+        transform: translate(0%, 0%);
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+
+      .button-86::after {
+        transform: translate(10px, 10px);
+        width: 35px;
+        height: 35px;
+        background: #ffffff15;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-radius: 50px;
+      }
+
+      .button-86:hover::before {
+        transform: translate(5%, 20%);
+        width: 110%;
+        height: 110%;
+      }
+
+      .button-86:hover::after {
+        border-radius: 10px;
+        transform: translate(0, 0);
+        width: 100%;
+        height: 100%;
+      }
+
+      .button-86:active::after {
+        transition: 0s;
+        transform: translate(0, 5%);
+      }
+    </style>
+  </section>
+  <!-- SCRIPT FOR MODEL  -->
+  <script>
+    // slide left and right on each section 
+    AOS.init({
+      once: false, // Animate elements every time they come into view
+      offset: 50, // Adjust the offset (in pixels) to start the animation earlier or later
+      duration: 800, // Duration of animation in milliseconds
+    });
+  </script>
+  {% include '_footer.html' %}
+  {% endblock %}

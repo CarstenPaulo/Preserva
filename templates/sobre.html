@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include '_navbar.html' %}
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    ;
+  }
+
+  .judson-regular {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .judson-bold {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  .judson-regular-italic {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* cards  socios */
+  /* General styles */
+  .section-gray {
+    background: #e5e5e5;
+    padding: 30px 0;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-avatar {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+  }
+
+  .card-avatar img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .card-body {
+    padding: 15px 30px;
+  }
+
+  .card-caption {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+  }
+
+  .card-description {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: #555;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  ul li {
+    margin: 5px 0;
+  }
+
+  .subtitle {
+    font-style: italic;
+    color: #777;
+  }
+</style>
+
+<body>
+  <!-- sobre -->
+  <section id="sobre">
+    <div class="container pt-4 pb-4 justify-content-center">
+      <div class="row">
+        <div class="col-md-6">
+          <!-- <img src="{% static 'img/Logo.png' %}" height="80" alt="" /> -->
+          <!-- <p class="text-left judson-regular" style=" font-size: 25px;">Soluções em Saneamaneto e Meio Ambiente.</p> -->
+          <p class="mb-4 text-dark" style="font-size: 18px;">É uma empresa fundada em 2020,
+            dedicada a oferecer soluções inovadoras e sustentáveis no setor de saneamento e meio ambiente. Com atuação
+            destacada no litoral e na serra catarinense, a PRESERVA tem se consolidado como uma referência na região,
+            atendendo tanto empresas públicas quanto privadas. A essência da PRESERVA está em seu compromisso com um
+            atendimento personalizado, que leva em consideração as necessidades e peculiaridades de cada cliente. A
+            empresa se distingue pela sua visão estratégica, focada em desenvolver soluções que não apenas resolvam
+            problemas imediatos, mas que também promovam a sustentabilidade a longo prazo.</p>
+        </div>
+        <div class="col-md-6">
+          <img class="img-fluid" style="border-radius: 5%;" src="{% static 'img/img-conquistas.jpg' %}" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- missao - visao - valores -->
+  <section id="missao-visao-valores">
+    <div class="container-fluid section-gray pt-4 mt-4 p-4">
+      <div class="container mt-4 pt-2">
+        <div class="row">
+          <div class="col-lg-6 text-center judson-bold">
+            <img class="rounded-circle" src="{% static 'img/missão_preserva.png' %}" alt="img_missao" height="140" />
+            <h1 class="text-center mt-3">Missão</h1>
+            <p>"Gerar impactos positivos por meio de cada projeto realizado.
+
+              Promover saúde e impulsionar o desenvolvimento sustentável utilizando soluções técnicas eficientes de
+              saneamento e meio ambiente."</p>
+          </div>
+          <div class="col-lg-6 text-center judson-bold">
+            <img class="rounded-circle" src="{% static 'img/valores_preserva.png' %}" alt="img_valores" height="140" />
+            <h1 class="text-center mt-3">Visão</h1>
+            <p>"Buscamos promover um desenvolvimento sustentável na região sull do Brasil, aliando responsabilidade
+              ambiental com gestão técnica."</p>
+          </div>
+          <!-- <div class="col-lg-4 text-center judson-bold">
+            <img class="rounded-circle" src="{% static 'img/missão_preserva.png' %}" alt="Generic placeholder image"
+              width="140" height="140" />
+            <h1 class="text-center mt-3">Valores</h1>
+            <p>"Ética e integridade para oferecer o melhor custo/benefício a clientes e parceiros, aliados com serviços
+              de qualidade.
+              A PRESERVA acredita na importância da preservação e conservação do meio ambiente para com o
+              desenvolvimento da sociedade."</p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="row justify-content-center p-4 mt-4">
+    <div class="col-md-7 text-center">
+      <h3 class="mb-1">Sócias-proprietárias</h3>
+      <hr class="w-50 mx-auto mb-xl-9 bg-dark" />
+      <h6 class="subtitle">Contamos com uma equipe altamente qualificada e dedicada, sempre pronta para oferecer o
+        melhor serviço e aprimorar nossa atuação a cada dia.</h6>
+    </div>
+  </div>
+  <div class="container mt-4 mb-4">
+    <div class="row text-center d-flex justify-content-center">
+      <div class="col-md-4">
+        <div class="card card-profile">
+          <div class="card-avatar">
+            <img class="img" src="{% static 'img/equipe/img_ariellen.jpeg' %}" />
+          </div>
+          <div class="card-body">
+            <h4 class="card-caption mt-3">Ariellen</h4>
+            <h6 class="font-weight-bold p-1">Responsável Técnica</h6>
+            <ul class="text-left">
+              <li>Engenheira Sanitarista</li>
+              <li>Mestre em Engenharia Ambiental</li>
+              <li>Especialista em Saneamento e Saúde Ambiental</li>
+              <li class="font-weight-bold">CREA-SC 174550-4</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card card-profile">
+          <div class="card-avatar">
+            <img class="img" src="{% static 'img/equipe/img_barbara.jpeg' %}" />
+          </div>
+          <div class="card-body">
+            <h4 class="card-caption">Bárbara Kayser</h4>
+            <h6 class="font-weight-bold p-1">Diretora Comercial</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% include '_footer.html' %}
+{% endblock %}

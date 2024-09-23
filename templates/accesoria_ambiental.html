@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include '_navbar.html' %}
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: url('/static/img/contato/thumbnail_Sem título.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .banner h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 3.5rem;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0;
+  }
+
+  .banner p {
+    font-size: 1.25rem;
+    margin: 20px 0 0;
+    /* Increased margin from the heading */
+    max-width: 80%;
+    /* Reduced max-width for better centering */
+    line-height: 1.6;
+    /* Improved line-height for readability */
+    display: inline-block;
+    /* Ensures the paragraph does not stretch the full width */
+  }
+
+  @media (max-width: 768px) {
+    .banner h1 {
+      font-size: 2rem;
+      padding: 15px;
+    }
+
+    .banner p {
+      font-size: 1rem;
+      max-width: 90%;
+      /* Adjusted for medium screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .banner h1 {
+      font-size: 1.5rem;
+      padding: 10px;
+    }
+
+    .banner p {
+      font-size: 0.875rem;
+      max-width: 100%;
+      /* Full width on smaller screens */
+    }
+  }
+
+  /* img */
+  .img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+</style>
+
+
+<body>
+  <!-- servicos assessoria ambiental -->
+  <section style="margin-bottom: 20px;">
+    <div class="banner mt-4">
+      <h1 style="margin-bottom: -10px;">ASSESORIA AMBIENTAL</h1>
+      <p class="text-center">
+        Auxílio técnico a pessoas físicas e jurídicas acerca de procedimentos ambientais e sanitários, atualização de
+        documentos, planejamento e desenvolvimento de projetos e estudos. </p>
+    </div>
+    <div class="row">
+      <div class="container d-flex justify-content-center" style="font-family: Arial, Helvetica, sans-serif;">
+        <div class="col-lg-12 text-center pt-5 pb-5 text-dark card mt-4">
+          <!-- servico 2 -->
+          <div class="carousel-item active text-center p-4">
+            <img class="img" src="{% static 'img/servicos/assessoria_ambiental/img_assessoria_1.png' %}"
+              alt="img_servico_residuos">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0" style="font-size: 20px;">
+                <br><i class="fa fa-quote-left"></i>
+                <span class="font-weight-bold" style="color: #0c8140;">​Licenciamento Ambiental
+                  (LAP, LAI, LAO)</span>
+              </p>
+              <span style="font-size: 15px;">Este documento é aplicável a todo empreendimento ou atividade ao qual
+                possa ocasionar em poluição ou qualquer tipo de degradação ao meio ambiente.
+                <br>
+                LAP: Licença Ambiental Prévia
+                LAI: Licença Ambiental de Instalação
+                LAO: Licença Ambiental de Operação
+              </span>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- servico 2 -->
+      <div class="container d-flex justify-content-center" style="font-family: Arial, Helvetica, sans-serif;">
+        <div class="col-lg-12 text-center pt-5 pb-5 text-dark card mt-4">
+          <div class="carousel-item active text-center p-4">
+            <img class="img" src="{% static 'img/servicos/assessoria_ambiental/img_assessoria_2.png' %}"
+              alt="img_servico_residuos">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0" style="font-size: 20px;">
+                <br><i class="fa fa-quote-left"></i>
+                <span class="font-weight-bold" style="color: #0c8140;">Cadastro Ambiental Rural – CAR</span>
+              </p>
+              <span style="font-size: 15px;">
+                O CAR é um registro público eletrônico das informações ambientas do imóvel, obrigatório desde 2019
+                para todas as propriedades e posses rurais. O CAR é exigido em transações comerciais e bancárias, como
+                o acesso ao crédito rural e ao seguro agrícola.
+              </span>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- servico 3 -->
+      <div class="container d-flex justify-content-center" style="font-family: Arial, Helvetica, sans-serif;">
+        <div class="col-lg-12 text-center pt-5 pb-5 text-dark card mt-4">
+          <div class="carousel-item active text-center p-4">
+            <img class="img" src="{% static 'img/servicos/assessoria_ambiental/img_assessoria_3.png' %}"
+              alt="img_servico_residuos">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0" style="font-size: 20px;">
+                <br><i class="fa fa-quote-left"></i>
+                <span class="font-weight-bold" style="color: #0c8140;">Plano de Recuperação de Áreas Degradadas –
+                  PRAD</span>
+              </p>
+              <span style="font-size: 15px;">
+                Documento designado a estabelecer e planejar técnicas para recuperação e restauração ecológica de uma
+                área degradada, danificada ou destruída por um empreendimento ou uma atividade.
+              </span>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- servico 4 -->
+      <div class="container d-flex justify-content-center" style="font-family: Arial, Helvetica, sans-serif;">
+        <div class="col-lg-12 text-center pt-5 pb-5 text-dark card mt-4">
+          <div class="carousel-item active text-center p-4">
+            <img class="img" src="{% static 'img/servicos/assessoria_ambiental/img_assessoria_4.png' %}"
+              alt="img_servico_residuos">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0" style="font-size: 20px;">
+                <br><i class="fa fa-quote-left"></i>
+                <span class="font-weight-bold" style="color: #0c8140;">Estudos de Impacto Ambiental e Relatório de
+                  Impacto Ambiental  EIA/RIMA</span>
+              </p>
+              <span style="font-size: 15px;">
+                É um conjunto de documentos que necessitam de uma equipe técnica multidisciplinar para seu
+                desenvolvimento com o objetivo de caracterizar e avaliar os possíveis impactos ambientais de um
+                empreendimento ou atividade, tal como, sugerir as medidas mitigadoras.
+              </span>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </section>
+</body>
+{% include '_footer.html' %}
+{% endblock %}

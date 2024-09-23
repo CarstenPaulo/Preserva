@@ -1,0 +1,212 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include '_navbar.html' %}
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .banner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: url('/static/img/contato/thumbnail_Sem título.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .banner h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 3.5rem;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 0;
+  }
+
+  .banner p {
+    font-size: 1.25rem;
+    margin: 20px 0 0;
+    /* Increased margin from the heading */
+    max-width: 80%;
+    /* Reduced max-width for better centering */
+    line-height: 1.6;
+    /* Improved line-height for readability */
+    display: inline-block;
+    /* Ensures the paragraph does not stretch the full width */
+  }
+
+  @media (max-width: 768px) {
+    .banner h1 {
+      font-size: 2rem;
+      padding: 15px;
+    }
+
+    .banner p {
+      font-size: 1rem;
+      max-width: 90%;
+      /* Adjusted for medium screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .banner h1 {
+      font-size: 1.5rem;
+      padding: 10px;
+    }
+
+    .banner p {
+      font-size: 0.875rem;
+      max-width: 100%;
+      /* Full width on smaller screens */
+    }
+  }
+
+  /* img */
+  .img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+</style>
+
+
+<body>
+
+  <!-- servicos esgosto -->
+  <section style="margin-bottom: 20px;">
+    <div class="banner mt-4">
+      <h1 style="margin-bottom: -10px;">ESGOTOS</h1>
+      <p class="text-center">
+        ​Projetos de engenharia para melhoria  da qualidade sanitária do ambiente, com soluções para tratamento de
+        efluentes diversos, regularização hidrossanitária de imóveis, monitoramento e avaliação de performance em
+        Estações de Tratamento de Esgotos.
+        Atendemos zonas rurais e urbanas.
+      </p>
+    </div>
+    <div class="container d-flex justify-content-center" style="font-family: Arial, Helvetica, sans-serif;">
+      <div class="row">
+
+
+
+
+        <!-- servico 1 -->
+        <div class="col-lg-12 text-center pt-5 pb-5 text-dark card mt-4">
+          <div class="active text-center p-4">
+            <img class="img" src="{% static 'img/servicos/esgoto/img_esgotos_1.png' %}" alt="img_servico_esgoto">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0" style="font-size: 20px;">
+                <br><i class="fa fa-quote-left"></i>
+                <span class="font-weight-bold" style="color: #0c8140;">Projetos Hidrossanitários</span>
+              </p>
+              <span style="font-size: 15px;">Objetiva mapear o sistema hidráulico de uma construção, projetando e
+                descrevendo com exatidão pontos de água, rede de esgoto, drenagem e coleta de água e chuva. Reduzindo
+                custos extras na construção, e facilitando futuros reparos.
+                <br>
+                É executado após estabelecido os projetos arquitetônico e estrutural da construção.
+              </span>
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- servico 2 -->
+        <div class="col-lg-12 text-center pt-5 pb-5 text-dark card mt-4">
+          <div class="active text-center p-4">
+            <img class="img" src="{% static 'img/servicos/esgoto/img_esgotos_2.png' %}" alt="img_servico_esgoto">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0" style="font-size: 20px;">
+                <br><i class="fa fa-quote-left"></i>
+                <span class="font-weight-bold" style="color: #0c8140;">Coleta e tratamento de esgotos</span>
+              </p>
+              <span style="font-size: 15px;">O tratamento adequado dos esgotos garante qualidade ambiental e proteção
+                da saúde humana.
+                <br>
+                A escolha da tecnologia mais adequada está diretamente ligada a eficiência de tratamento que se deseja
+                obter, do tipo de efluente a ser tratado, da disponibilidade de área e da necessidade paisagística.
+              </span>
+            </blockquote>
+          </div>
+        </div>
+
+
+
+        <!-- servico 3 -->
+        <div class="col-lg-12 text-center pt-5 pb-5 text-dark card mt-4">
+          <div class="active text-center p-4">
+            <img class="img" src="{% static 'img/servicos/esgoto/img_esgotos_3.png' %}" alt="img_servico_esgoto">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0" style="font-size: 20px;">
+                <br><i class="fa fa-quote-left"></i>
+                <span class="font-weight-bold" style="color: #0c8140;">Ecotecnologias para tratamento de
+                  esgotos</span>
+              </p>
+              <span style="font-size: 15px;">As Ecotecnologias são conhecidas como Wetlands Construídos, Filtros
+                Plantados ou Jardins Filtrantes, são uma opção ao tratamento de esgotos que simulam os processos
+                naturais de depuração que acontecem na natureza!
+                <br>
+                Tratam esgotos de diversas fontes poluidoras – comércio, indústrias e residências – Necessitam de
+                baixa manutenção e operação, são paisagísticos e possuem alta eficiência na remoção de poluentes!
+              </span>
+            </blockquote>
+          </div>
+        </div>
+
+
+        <!-- servico 4 -->
+        <div class="col-lg-12 text-center pt-5 pb-5 text-dark card mt-4">
+          <div class="active text-center p-4">
+            <img class="img" src="{% static 'img/servicos/esgoto/img_esgotos_4.png' %}" alt="img_servico_esgoto">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0" style="font-size: 20px;">
+                <br><i class="fa fa-quote-left"></i>
+                <span class="font-weight-bold" style="color: #0c8140;">Regularização de Instalações Hidrossanitárias
+                  de Imóveis</span>
+              </p>
+              <span style="font-size: 15px;"> Declaração de Conformidade Sanitária, Habite-se e Alvará Sanitário,
+                Relatórios, vistorias, obras, laudos, emissão de ART, entre outros procedimentos necessários para
+                regularizar sua casa ou empreendimento.
+              </span>
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- servico 5 -->
+        <div class="col-lg-12 text-center pt-5 pb-5 text-dark card mt-4">
+          <div class="active text-center p-4">
+            <img class="img" src="{% static 'img/servicos/esgoto/img_esgotos_5.png' %}" alt="img_servico_esgoto">
+            <blockquote class="blockquote text-center">
+              <p class="mb-0" style="font-size: 20px;">
+                <br><i class="fa fa-quote-left"></i>
+                <span class="font-weight-bold" style="color: #0c8140;">Monitoramento de Estações de Tratamento e
+                  Análises de Qualidade </span>
+              </p>
+              <span style="font-size: 15px;">O monitoramento frequente e as análises físico-químicas e microbiológicas
+                são uma importante ferramenta de controle de qualidade e avaliação da performance do tratamento, se
+                aplicam a águas e esgotos e nos respondem uma série de perguntas.
+                <br>
+                Se for identificado algo fora do padrão é possível determinar a causa e realizar a adequada correção.
+              </span>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+
+
+
+
+{% include '_footer.html' %}
+{% endblock %}

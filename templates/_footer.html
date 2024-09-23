@@ -1,0 +1,119 @@
+{% load static %}
+<style>
+  h4 {
+    font-size: 15px;
+  }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .footer {
+    background: #000;
+    padding: 30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+  }
+
+  .footer .row {
+    width: 100%;
+    margin: 1% 0%;
+    padding: 0.6% 0%;
+    color: gray;
+    font-size: 0.8em;
+  }
+
+  .footer .row a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+  }
+
+  .footer .row a:hover {
+    color: #fff;
+  }
+
+  .footer .row ul {
+    width: 100%;
+  }
+
+  .footer .row ul li {
+    display: block;
+    margin: 0px 30px;
+  }
+</style>
+
+
+<section>
+  <div class="footer">
+    <aside style="background-color:#000">
+      <div class="container ">
+        <div class="row">
+
+          <!-- Preserva -->
+          <div class="col-md-4 text-white">
+            <h3 class="mt-2 font-weight-bold mr-3">
+              <img src="{% static 'img/Logo.png' %}" height="50" alt="">
+            </h3>
+            <a href="https://www.instagram.com/preserva.sma/" class="href">
+              <button class="round-6  text-white" style="background-color: purple;"><i class="fab fa-instagram"
+                  aria-hidden="true"></i></button>
+            </a>
+            <!-- <a href="" class="href">
+              <button class="round-6 bg-primary text-white"><i class="fab fa-linkedin" aria-hidden="true"></i></button>
+            </a> -->
+            <a href="https://www.facebook.com/preserva.sma/" class="href">
+              <button class="round-6 bg-primary text-white"><i class="fab fa-facebook" aria-hidden="true"></i></button>
+            </a>
+            <a href="https://wa.me/message/UNJCDY73F7PQD1" class="href">
+              <button class="round-6 bg-success text-white"><i class="fa-brands fa-whatsapp "
+                  aria-hidden="true"></i></button>
+            </a>
+          </div>
+
+          <!-- Serviços -->
+          <div class="col-md-4 text-white">
+            <h4 class="mt-2 font-weight-bold">MAPA DO SITE</h4>
+            <ul>
+              <li><a class="mr-4" href="{% url 'index' %}">Início</a></li>
+              <li><a class="mr-4" href="{% url 'sobre' %}">Sobre</a></li>
+              <li><a class="mr-4" href="{% url 'servicos' %}">Serviços</a></li>
+              <li><a class="mr-4" href="{% url 'contato' %}">Contato</a></li>
+            </ul>
+          </div>
+
+          <!-- CONTATO -->
+          <div class="col-md-4 text-white">
+            <h4 class="mt-2 font-weight-bold mr-3">CONTATO</h4>
+            <p class="text-light"><i class="fas fa-phone me-3 text-light"></i> + 55 47 9201-6397</p>
+            <p class="text-light"><i class="fa-brands fa-whatsapp me-3 text-light"></i> +55 49 9116-0239</p>
+            <p class="text-light"><i class="fas fa-envelope me-3 text-light"></i> preserva.sma@gmail.com</p>
+          </div>
+          <!--  -->
+
+          <div class="container">
+            <hr class="bg-light mt-4">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="text-white small" style="font-size: 12px; font-family: 'Courier New', Courier, monospace;">
+                  © 2014 - 2024 | Todos os direitos reservados.
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="text-white small float-right"
+                  style="font-size: 12px; font-family: 'Courier New', Courier, monospace;">
+                  Desenvolvido com <i class="fa-solid fa-heart"></i> Por <a
+                    href="https://www.tecnologiacriativa.com.br/">Soluções Web Brasil</a>
+                </div>
+              </div>
+            </div>
+</section>
+
+<style>
+  .round-6 {
+    border-radius: 70%;
+    height: 40px;
+    width: 40px;
+  }
+</style>

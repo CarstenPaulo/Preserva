@@ -1,0 +1,67 @@
+{% load static %}
+<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #0c8140;">
+  <div class="container">
+    <a class="navbar-brand pb-2 pt-2" href="{% url 'index' %}"
+      style="font-family: Arial, Helvetica, sans-serif; font-weight: 500; font-size: 13px;">
+    </a>
+    <form class="form-inline my-2 my-lg-0">
+      <a href="https://www.instagram.com/preserva.sma/" class="href"><i style="color: white;"
+          class="fa-brands fa-instagram mr-4"></i></a>
+      <a href=" https://maps.app.goo.gl/Co4uMMK3oRPnAC1e6" class="href"><i style="color: white;"
+          class="fa-brands fa-google mr-4"></i></a>
+      <a href="https://www.facebook.com/preserva.sma/" class="href"><i style="color: white;"
+          class="fa-brands fa-facebook mr-4"></i></a>
+      <!-- <a href="https://www.instagram.com/preserva.sma/" class="href"><i style="color: white;"
+          class="fa-brands fa-linkedin mr-4"></i></a> -->
+      <a href="https://wa.me/message/UNJCDY73F7PQD1" class="href"><i style="color: white;"
+          class="fa-brands fa-whatsapp mr-4"></i></a>
+    </form>
+  </div>
+</nav>
+
+<style>
+  @media(max-width:410px) {
+    .img_logo {
+      height: 54px;
+    }
+  }
+
+  .navbar-nav {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: unset;
+  }
+</style>
+<nav class="navbar navbar-expand-sm navbar-dark">
+  <div class="container">
+    <a class="navbar-brand mb-2 mt-2" href="{% url 'index' %}">
+      <img class="img_logo" src="{% static 'img/logo_preserv.jpg' %}" height="65" alt="">
+    </a>
+    <button class="navbar-toggler d-lg-none bg-dark text-light" style="font-size: 15px;" type="button"
+      data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+      aria-label="Toggle navigation">MENU</button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link text-dark " href="{% url 'index' %}">Início <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link text-dark" href="{% url 'sobre' %}">Sobre</a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle text-dark" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">Serviços</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownId">
+            <a class="dropdown-item" href="{% url 'aguas' %}">Águas</a>
+            <a class="dropdown-item" href="{% url 'esgotos' %}">Esgotos</a>
+            <a class="dropdown-item" href="{% url 'residuos_solidos' %}">Resíduos Sólidos</a>
+            <a class="dropdown-item" href="{% url 'accesoria_ambiental' %}"> Assessoria Ambiental</a>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link text-dark " href="{% url 'contato' %}">Contato</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
